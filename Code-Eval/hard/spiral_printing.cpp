@@ -12,12 +12,11 @@ int main(int argc, char** argv)
     std::ifstream ifs(argv[1], std::ios_base::in);
 
     if (!ifs.good()) { return 1; }
-    while (!ifs.eof() || ifs.peek() != EOF) {
-        ifs >> matY;
+    while (ifs >> matY) {
         ifs.ignore();
         ifs >> matX;
         ifs.ignore();
-		//std::cout << matX << " " << matY << std::endl;
+	    //std::cout << matX << " " << matY << std::endl;
 
         std::vector<std::vector<int>> matrix;
         for (int y = 0; y < matY; y++) {
@@ -69,7 +68,6 @@ int main(int argc, char** argv)
 
         std::cout << std::endl;
 		ifs >> std::ws;
-		ifs.peek();
 	}
 
     ifs.close();
