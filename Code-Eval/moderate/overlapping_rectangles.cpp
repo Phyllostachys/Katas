@@ -16,7 +16,7 @@ struct rectangle {
 
 std::string checkOverlapping(rectangle r1, rectangle r2);
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     std::ifstream file;
     std::string lineBuffer;
@@ -98,8 +98,8 @@ std::string checkOverlapping(rectangle r1, rectangle r2)
     }
 
     if ((r2.y1 < r1.y2) || /* r2 is below r1 */
-        (r2.x1 > r1.x2) || /* r2 is to the right of r1 */
-        (r2.y2 > r1.y1)) { /* r2 is above and right of r1 */
+            (r2.x1 > r1.x2) || /* r2 is to the right of r1 */
+            (r2.y2 > r1.y1)) { /* r2 is above and right of r1 */
         return "False";
     } else {
         return "True";
