@@ -8,9 +8,5 @@ fizzbuzz x
         (False, True) -> "Buzz\n"
         (False, False) -> show x ++ "\n"
 
-flatten :: [String] -> String
-flatten [] = []
-flatten xs = concat xs
-
 main :: IO ()
-main = putStrLn . flatten $ map fizzbuzz [1 .. 100]
+main = mapM_ (putStr . fizzbuzz) [1 .. 100]
